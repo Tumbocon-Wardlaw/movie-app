@@ -28,7 +28,16 @@
     //         $( "#loadingDiv" ).remove(); //makes page more lightweight
     //     });
     // }
+    getMovies().then(console.log)
 
+    getMovies().then(movies => {
+        let html = '<ul>';
+        for (let movie of movies){
+            html += `<li> ${movie.title} </li>`
+        }
+            html += '</ul>'
+        document.write(html)
+    });
 
 </script>
 
