@@ -13,9 +13,50 @@
 
 </head>
 <body>
+<h1>TEST</h1>
+<!--ADD MOVIES FORM-->
+<div>
+<form>
+    <div class="form-group">
+        <label for="newMovieTitle" >Title</label>
+        <input type="email" class="form-control" id="newMovieTitle" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Rating</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+<!--    <div class="form-group">-->
+<!--        <label for="exampleFormControlSelect2">Example multiple select</label>-->
+<!--        <select multiple class="form-control" id="exampleFormControlSelect2">-->
+<!--            <option>1</option>-->
+<!--            <option>2</option>-->
+<!--            <option>3</option>-->
+<!--            <option>4</option>-->
+<!--            <option>5</option>-->
+<!--        </select>-->
+<!--    </div>-->
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <btn type="submit" id="movie-input">Submit</btn>
+</form>
+</div>
+<!--END OF ADD MOVIES FORM-->
+
+<div id="cards">
+</div>
 
 <script>
-// <!--    fadeout not working correctly due to bootstrap jquery but its not throwing an error.-->
+    $(document).ready(function(){
+
+// LOADING ANIMATION
     $('body').append(
         '<div style="" id="loadingDiv">Loading...' +
         '<div class="loader">Loading...' +
@@ -31,12 +72,12 @@
         });
     }
     getMovies().then(console.log)
-
+    // MOVIES CARDS
     getMovies().then(movies => {
-        let html = "";
+        let buildHTML = "";
         for (let movie of movies){
-            html += `<li> ${movie.title} </li>`
-            html += `<div class="card" style="width: 18rem;">
+            buildHTML += `<li> ${movie.title} </li>`
+            buildHTML += `<div class="card" style="width: 18rem;">
             <img src="img/up.img" class="card-img-top" alt="Up">
             <div class="card-body">
             <h5 class="card-title">${movie.title}</h5>
@@ -45,10 +86,18 @@
             </div>
             </div>`
         }
-        document.write(html)
+        $('#cards').html(buildHTML);
     });
+//  END MOVIES CARDS
 
-console.log(addMovie("Rambo"));
+
+// $(document).ready(function(){
+//     $("#submitBtn").click(function(){
+//         $("#myForm").submit(); // Submit the form
+//     });
+});
+
+
 
 </script>
 
