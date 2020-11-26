@@ -7,9 +7,9 @@ const apiURL = 'https://knowing-healthy-price.glitch.me/movies'
 const getMovies = () => fetch(apiURL)
     .then(res => res.json())
     .catch(console.error);
-//Setting to create new movie
+// //Setting to create new movie
 // const test = {title: 'Red', body: 'Blue!'};
-
+//
 // const addMovie = (addNewMovie) => fetch(`${apiURL}`, {
 //     method: 'POST',
 //     headers: {
@@ -23,7 +23,7 @@ const getMovies = () => fetch(apiURL)
 //         return data.id;
 //     })
 //     .catch(console.error);
-
+//
 // function addNewMovie(){
 //     let newMovieTitle = newMovieTitleInput.value;
 //     let newMovie = {
@@ -31,7 +31,6 @@ const getMovies = () => fetch(apiURL)
 //     }
 //     movies.push(newMovie)
 // }
-//
 // var movieInput = document.querySelector(#movie-input)
 //
 function addNewMovie (){
@@ -103,4 +102,34 @@ $('#movie-form').on("submit", function(event) {
 });
 
 // });
+// START OF DELETE FEATURE
+
+const deleteMovie = id => fetch(`${apiURL}/${id}`, {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+    .then(res => res.json())
+    .then(() => {
+        console.log(`Success: deleted movie with id of ${id}`);
+    })
+    .catch(console.error);
+
+$(document).on('click', '.card-holder .delete', function(){
+    $(this).closest('.card-holder').remove();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 

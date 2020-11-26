@@ -87,18 +87,21 @@
     getMovies().then(movies => {
         let buildHTML = "";
         for (let movie of movies){
+            buildHTML += `<div class="card-holder">`
             buildHTML += `<li> ${movie.title} </li>`
             buildHTML += `<div class="card" style="width: 18rem;">
             <img src="img/up.img" class="card-img-top" alt="Up">
             <div class="card-body">
             <h5 class="card-title">${movie.title}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <button class="delete">Delete</button>
+            </div>
             </div>
             </div>`
         }
         $('#cards').html(buildHTML);
     });
+    deleteMovie(5);
 //  END MOVIES CARDS
 
 
