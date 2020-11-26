@@ -14,17 +14,7 @@
 </head>
 <body>
 <h1>TEST</h1>
-<!--{-->
-<!--"title": "up",-->
-<!--"rating": "5",-->
-<!--"poster": "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_SX300.jpg",-->
-<!--"year": "2009",-->
-<!--"genre": "Animation, Adventure, Comedy, Family",-->
-<!--"director": "Pete Docter, Bob Peterson(co-director)",-->
-<!--"plot": "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.",-->
-<!--"actors": "Edward Asner, Christopher Plummer, Jordan Nagai, Bob Peterson",-->
-<!--"id": 1-->
-<!--},-->
+
 <!--ADD MOVIES FORM-->
 <div>
 <form id="movie-form">
@@ -42,27 +32,19 @@
             <option>5</option>
         </select>
     </div>
-<!--    <div class="form-group">-->
-<!--        <label for="exampleFormControlSelect2">Example multiple select</label>-->
-<!--        <select multiple class="form-control" id="exampleFormControlSelect2">-->
-<!--            <option>1</option>-->
-<!--            <option>2</option>-->
-<!--            <option>3</option>-->
-<!--            <option>4</option>-->
-<!--            <option>5</option>-->
-<!--        </select>-->
-<!--    </div>-->
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Description</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
-    <input type="submit"  value="submit" id="movie-input">
+    <input type="submit" value="submit" id="submit">
 </form>
 </div>
 <!--END OF ADD MOVIES FORM-->
 
+<!--START OF CARDS-->
 <div id="cards">
 </div>
+<!--END OF CARDS-->
 
 <script>
     $(document).ready(function(){
@@ -83,7 +65,7 @@
         });
     }
     getMovies().then(console.log)
-    // MOVIES CARDS
+    // BUILDING CARDS
     getMovies().then(movies => {
         let buildHTML = "";
         for (let movie of movies){
@@ -101,14 +83,10 @@
         }
         $('#cards').html(buildHTML);
     });
-    deleteMovie(5);
-//  END MOVIES CARDS
+
+//  END BUILDING MOVIES CARDS
 
 
-// $(document).ready(function(){
-//     $("#submitBtn").click(function(){
-//         $("#myForm").submit(); // Submit the form
-//     });
 });
 
 
