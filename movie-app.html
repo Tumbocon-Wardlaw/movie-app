@@ -81,31 +81,24 @@
 
 
     getMovies().then(movies => {
-        let globalMovieImageCounter = 0
         let buildHTML = "";
         for (let movie of movies){
             buildHTML += `<div class="card-holder">`
             buildHTML += `<h3>${movie.title}</h3>`
             buildHTML += `<div class="card" style="width: 18rem;">
-            <img src="img/.img" movieArray[globalMovieImageCounter] class="card-img-top" alt="Up">
-            <div class="card-body">
-            <h5 class="card-title">${movie.rating} out of 5</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button class="delete">Delete</button>
-            </div>
-            </div>
-            </div>`
-
-            globalMovieImageCounter += 1;
-            if (globalMovieImageCounter > movies.length){
-                globalMovieImageCounter = 0;}
-
+                        <img src="img/${movieArray[movies.indexOf(movie)]}" class="card-img-top" alt="Up">
+                        <div class="card-body">
+                        <h5 class="card-title">${movie.rating} out of 5</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <button class="delete">Delete</button>
+                        </div>
+                        </div>
+                        </div>`
         }
         $('#cards').html(buildHTML);
     });
 
 //  END BUILDING MOVIES CARDS
-
 
 });
 
