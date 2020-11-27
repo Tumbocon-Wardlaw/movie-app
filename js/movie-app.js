@@ -8,6 +8,15 @@ const getMovies = () => fetch(apiURL)
     .then(res => res.json())
     .catch(console.error);
 
+//MOVIE IMAGES
+
+let movieArray = [
+    "movie 1.jpeg",
+    "movie 2.jpg",
+    "movie 3.jpeg",
+    "movie 4.jpg"
+]
+
 //Setting to create new movie
 // const test = {title: 'Red', body: 'Blue!'};
 
