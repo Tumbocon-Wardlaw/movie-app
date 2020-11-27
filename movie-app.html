@@ -53,7 +53,10 @@
 
 <!--START OF CARDS-->
 <div class="container">
-<div class="row" id="cards">
+<div class="row" >
+<div class="col-3" id="cards">
+
+</div>
 </div>
 </div>
 <!--END OF CARDS-->
@@ -84,6 +87,8 @@
         let buildHTML = "";
         for (let movie of movies){
             buildHTML += `<div class="card-holder">`
+            // buildHTML += `<div class="row">`
+            // buildHTML += `<div class="col-3">`
             buildHTML += `<h3>${movie.title}</h3>`
             buildHTML += `<div class="card" style="width: 18rem;">
                         <img src="img/${movieArray[movies.indexOf(movie)]}" class="card-img-top" alt="Up">
@@ -91,6 +96,8 @@
                         <h5 class="card-title">${movie.rating} out of 5</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <button class="delete">Delete</button>
+<!--                        </div>-->
+<!--                        </div>-->
                         </div>
                         </div>
                         </div>`
