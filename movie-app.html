@@ -88,17 +88,13 @@
                 movie.forEach(function ({title, id, rating, description}) {
                     let movieInfoString = (`${title}`)
                     buildHTML += `<div class="card-holder">`
-                    // buildHTML += `<div class="row">`
-                    // buildHTML += `<div class="col-3">`
                     buildHTML += `<h3>${title}</h3>`
                     buildHTML += `<div class="card" style="width: 18rem;">
                         <img src="img/${movieArray[id-1]}" class="card-img-top" alt="Up">
                         <div class="card-body">
                         <h5 class="card-title">${rating} out of 5</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button class="delete" id="delete-button">Delete</button>
-<!--                        </div>-->
-<!--                        </div>-->
+                        <button data-id= ${id} class="delete" id="delete-button">Delete</button>
                         </div>
                         </div>
                         </div>`
