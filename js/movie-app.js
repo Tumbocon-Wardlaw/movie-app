@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 const apiURL = 'https://knowing-healthy-price.glitch.me/movies'
 
 
@@ -20,18 +22,26 @@ let movieArray = [
 //Setting to create new movie
 // const test = {title: 'Red', body: 'Blue!'};
 
-let newMovieArray = [];
+// let newMovieArray = [];
+//
+//
+//     $('#submit').on('click', function(){
+//         $(".lootname").each(function () {
+//             lootnameObj = {};
+//             lootnameObj[$(this).attr('name')] = $(this).attr('name').val();
+//             newMovieArray.push(lootnameObj);
+//
+//         });
+//     });
 
+//Link form submit to Crud function
+//Grab value out of form inputs
+//Add click event listener on submit button, grab values as strings and pass them out.
 
-    $('#submit').on('click', function(){
-        $(".lootname").each(function () {
-            lootnameObj = {};
-            lootnameObj[$(this).attr('name')] = $(this).attr('name').val();
-            newMovieArray.push(lootnameObj);
+//create jquery object that takes values from field
+//use a let object, put it inside the event listener
 
-        });
-    });
-
+// event addEventListener("MSGestureDoubleTap", call the add function (let))
 
 
 const addMovie = (input) => fetch(`${apiURL}`, {
@@ -51,10 +61,14 @@ const addMovie = (input) => fetch(`${apiURL}`, {
 
 
 
+// console.log(addMovie(test));
+
+
 //addMovie() to push info to server
 //connect addMovie() to the form
 
 
+//Link delete CRUD function
 
 // START OF DELETE FEATURE
 const deleteMovie = id => fetch(`${apiURL}/${id}`, {
@@ -72,6 +86,7 @@ const deleteMovie = id => fetch(`${apiURL}/${id}`, {
 $(document).on('click', '.card-holder .delete', function(){
     $(this).closest('.card-holder').remove();
 })
+
 
 
 
