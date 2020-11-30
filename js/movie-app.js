@@ -55,13 +55,8 @@ const deleteMovie = id => fetch(`${apiURL}/${id}`, {
 
 
 $(document).on('click', '.card-holder .delete', function(){
-    // $(this).closest('.card-holder').remove();
-    // $(this).attr("data-id")
-    // deleteMovie(data-id);
-    // console.log("hello")
-    console.log($(this).data("id"));
-    // console.log($(this).data('id'));
-    console.log(this);
+    $(this).closest('.card-holder').remove();
+     deleteMovie($(this).data("id"));
 })
 
 
