@@ -33,8 +33,8 @@
         <input type="text" class="form-control" name="title" id="newMovieTitle">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Rating</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <label for="newMovieRating">Rating</label>
+        <select class="form-control" id="newMovieRating">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -43,8 +43,8 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="newMovieDescription">Description</label>
+        <textarea class="form-control" id="newMovieDescription" rows="3"></textarea>
     </div>
     <input type="submit" value="submit" id="submit">
 </form>
@@ -63,6 +63,33 @@
 
 <script>
     $(document).ready(function(){
+
+        let movieTitle = document.getElementById('newMovieTitle');
+        document.querySelector('form.movie-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log(movieTitle.value)
+        });
+
+        //input other code (event listeners and dom interactions)
+
+        // $('#submit').click(function(e) {
+        //     //Need to console individual values form form inputs (title, rating)
+        //     //Jquery method to access objects properties
+        //     //Creat movie object that has properties for each one (title, rating etc)
+        //     //Pass movie object created to add movie function
+        //     e.preventDefault()
+        //
+        //
+        //     let movieObject = {
+        //     }
+        //     alert()
+        // });
+
+        var submitMovie = document.getElementById('submit');
+
+        submitMovie.addEventListener('click', function(e) {
+
+        });
 
 // LOADING ANIMATION
     $('body').append(
