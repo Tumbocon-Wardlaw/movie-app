@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 const apiURL = 'https://knowing-healthy-price.glitch.me/movies'
 
 
@@ -39,9 +37,7 @@ const addMovie = (input) => fetch(`${apiURL}`, {
         return data.id;
     })
     .catch(console.error);
-
-
-
+// addMovie(test);
 
 
 // console.log(addMovie(test));
@@ -118,20 +114,6 @@ const editMovie = movie => fetch(`${apiURL}/${movie.id}`, {
 
 
 
-//EDIT MOVIE FEATURE
-
-const editMovie = movie => fetch(`${apiURL}/${movie.id}`, {
-    method: 'PUT',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(movie)
-})
-    .then(res => res.json())
-    .then(data => {
-        console.log(`Success: edited ${JSON.stringify(data)}`);
-    })
-    .catch(console.error);
 
 
 
