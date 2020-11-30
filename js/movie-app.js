@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 const apiURL = 'https://knowing-healthy-price.glitch.me/movies'
 
 
@@ -20,7 +22,12 @@ let movieArray = [
 //Setting to create new movie
 // const test = {title: 'Red', body: 'Blue!'};
 
+
 let newMovieArray = [];
+
+
+
+
 
 const addMovie = (input) => fetch(`${apiURL}`, {
     method: 'POST',
@@ -35,6 +42,19 @@ const addMovie = (input) => fetch(`${apiURL}`, {
         return data.id;
     })
     .catch(console.error);
+
+
+
+
+
+// console.log(addMovie(test));
+
+
+//addMovie() to push info to server
+//connect addMovie() to the form
+
+
+//Link delete CRUD function
 
 
 // START OF DELETE FEATURE
@@ -70,34 +90,9 @@ const editMovie = movie => fetch(`${apiURL}/${movie.id}`, {
     })
     .catch(console.error);
 
-const updateTitle = document.querySelector('input[name="updateTitle"]') //selecting the input with name property "name"
-const updateRating = document.querySelector('input[name="updateRating"]') //selecting the input with name property "name"
-const updateFormButton = document.querySelector("button#updateMovie") //select button with id "createitem"
 
 
-const updateButton = document.createElement(`button`) //create update button
-updateButton.id = index
-updateButton.innerText = "Update" //make the delete button say "Delete"
-updateButton.addEventListener("click", event => {
-    updateTitle.value = movie.title //set form to show current title
-    updateRating.value = movie.rating //set form to show current rating
-    updateFormButton.setAttribute("toupdate", index) //custom attribute to use in the button event later
-})
 
-buttonContainer.appendChild(updateButton) //apend the delete button
-
-personH1.innerText = `${person.name} is ${person.age} years old` //ads text to the h1
-mainDiv.appendChild(personH1) //append the h1 to the main element
-mainDiv.appendChild(buttonContainer) //append container of update and delete button
-})
-}
-const updateData = event => {
-    const index = event.target.getAttribute("toupdate") //get index we stored via custom attribute
-    const name = updateTitle.value //get value from form
-    const age = updateRating.value //get value from form
-    movie[index] = { title, rating } //replace existing object at that index with a new with updated values
-    renderData() //update the DOM with the new data
-}
 
 
 
