@@ -21,7 +21,7 @@ let movieArray = [
 // const test = {title: 'Red', body: 'Blue!'};
 
 
-let newMovieArray = [];
+
 
 
 const addMovie = (input) => fetch(`${apiURL}`, {
@@ -37,17 +37,7 @@ const addMovie = (input) => fetch(`${apiURL}`, {
         return data.id;
     })
     .catch(console.error);
-// addMovie(test);
 
-
-// console.log(addMovie(test));
-
-
-//addMovie() to push info to server
-//connect addMovie() to the form
-
-
-//Link delete CRUD function
 
 
 // START OF DELETE FEATURE
@@ -63,9 +53,14 @@ const deleteMovie = id => fetch(`${apiURL}/${id}`, {
     })
     .catch(console.error);
 
+
 $(document).on('click', '.card-holder .delete', function(){
-    $(this).closest('.card-holder').remove();
+    // $(this).closest('.card-holder').remove();
+    console.log("hello")
+    console.log(getMovies[id])
 })
+
+
 
 //EDIT MOVIE FEATURE
 

@@ -96,7 +96,7 @@
                         <div class="card-body">
                         <h5 class="card-title">${rating} out of 5</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button class="delete">Delete</button>
+                        <button class="delete" id="delete-button">Delete</button>
 <!--                        </div>-->
 <!--                        </div>-->
                         </div>
@@ -108,7 +108,7 @@
             })
         }
 
-        // let movieTitle = document.getElementById('newMovieTitle');
+        //Event listener on form
         $("#submit").click(function (e) {
             e.preventDefault()
             let userInput = {
@@ -125,47 +125,25 @@
                 })
         })
 
-        // movieTitle.addEventListener('click', function() {
-        // console.log(this.value);
+        // $("#delete").click(function (e) {
+        //     e.preventDefault()
+        //     console.log("hello")
+        //     // deleteMovie(this.id)
+        // })
 
         let movieRating = document.getElementById('newMovieRating');
         movieRating.addEventListener('click', function () {
-            // //     // console.log(this.value);
+
         });
         let movieDescription = document.getElementById('newMovieDescription');
         movieDescription.addEventListener('click', function () {
-            // //     // console.log(this.value);
+
         });
         let submitBtn = document.getElementById('submit');
         submitBtn.addEventListener('click', function () {
-            // alert(this.value);
-        });
-        // let movieObj = {
-        //     title: movieTitle.value,
-        //     rating: movieRating.value,
-        //     description: movieDescription.value
-        // };
-
-        //input other code (event listeners and dom interactions)
-
-        // $('#submit').click(function(e) {
-        //     //Need to console individual values form form inputs (title, rating)
-        //     //Jquery method to access objects properties
-        //     //Creat movie object that has properties for each one (title, rating etc)
-        //     //Pass movie object created to add movie function
-        //     e.preventDefault()
-        //
-        //
-        //     let movieObject = {
-        //     }
-        //     alert()
-        // });
-
-        var submitMovie = document.getElementById('submit');
-
-        submitMovie.addEventListener('click', function (e) {
 
         });
+
 
 // LOADING ANIMATION
         $('body').append(
@@ -185,12 +163,9 @@
         }
 
         getMovies().then(console.log)
-        // BUILDING CARDS
-
+        // Calling to build cards
         renderCards()
 
-
-//  END BUILDING MOVIES CARDS
 
     });
 
