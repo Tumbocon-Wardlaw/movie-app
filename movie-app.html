@@ -45,6 +45,18 @@
             </select>
         </div>
         <div class="form-group">
+            <label for="genre">Genre</label>
+            <textarea class="form-control" id="genre" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="yearReleased">Year Released</label>
+            <textarea class="form-control" id="yearReleased" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="director">Director</label>
+            <textarea class="form-control" id="director" rows="1"></textarea>
+        </div>
+        <div class="form-group">
             <label for="newMovieDescription">Description</label>
             <textarea class="form-control" id="newMovieDescription" rows="3"></textarea>
         </div>
@@ -85,15 +97,19 @@
                 //Break out into it's own function
                 $("#cards").html('');
                 let buildHTML = ""
-                movie.forEach(function ({title, id, rating, description}) {
+                movie.forEach(function ({title, id, rating, description, genre, director, yearReleased}) {
                     let movieInfoString = (`${title}`)
                     buildHTML += `<div class="card-holder">`
-                    buildHTML += `<h3>${title}</h3>`
+                    // buildHTML += `<h3>${title}</h3>`
                     buildHTML += `<div class="card" style="width: 18rem;">
-                        <img src="img/${movieArray[id-1]}" class="card-img-top" alt="Up">
-                        <div class="card-body">
+                        <img src="img/${movieArray[id - 1]}" class="card-img-top" alt="Up">
+                        \<h3>${title}</h3>\
                         <h5 class="card-title">${rating} out of 5</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <label for="newMovieDescription"></label>
+                        <p  id="card-description"> ${description}</p>
+                        <p></p>
+                        <div class="card-body">
+<!--                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
                         <button data-id= ${id} class="delete" id="delete-button">Delete</button>
                         </div>
                         </div>
@@ -111,6 +127,9 @@
                 //grabbing form value
                 title: $("#newMovieTitle").val(),
                 rating: $("#newMovieRating").val(),
+                yearReleased: $("#newYearReleased").val(),
+                director: $("#newdirector").val(),
+                genre: $("#newGenre").val(),
                 description: $("#newMovieDescription").val()
             };
 
@@ -121,24 +140,6 @@
                 })
         })
 
-        // $("#delete").click(function (e) {
-        //     e.preventDefault()
-        //     console.log("hello")
-        //     // deleteMovie(this.id)
-        // })
-
-        let movieRating = document.getElementById('newMovieRating');
-        movieRating.addEventListener('click', function () {
-
-        });
-        let movieDescription = document.getElementById('newMovieDescription');
-        movieDescription.addEventListener('click', function () {
-
-        });
-        let submitBtn = document.getElementById('submit');
-        submitBtn.addEventListener('click', function () {
-
-        });
 
 
 // LOADING ANIMATION
