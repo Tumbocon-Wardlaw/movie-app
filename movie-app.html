@@ -16,6 +16,28 @@
         #navbar {
             padding-bottom: 4em;
         }
+
+        #button-container  {
+            justify-content: center;
+        }
+
+        #submit-container   {
+            justify-content: center;
+            padding-bottom: 2em;
+        }
+
+        .navbar  {
+            justify-content: center;
+        }
+
+        #cards  {
+            padding-top: 2em;
+            justify-content: space-evenly;
+        }
+
+        #loadingDiv {
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
@@ -28,7 +50,7 @@
 <!--END NAVBAR-->
 
 <!--ADD MOVIES FORM-->
-<div class="container">
+<div class="container" id="main">
     <form id="movie-form">
         <div class="form-group">
             <label for="newMovieTitle">Title</label>
@@ -60,10 +82,12 @@
             <label for="plot">Plot</label>
             <textarea class="form-control" id="plot" rows="3"></textarea>
         </div>
+        <div class="row" id="submit-container">
         <input type="submit" value="submit" id="submit">
         <!--    <input type="submit" value="submit" id="edit">-->
+        </div>
     </form>
-</div>
+
 <!--END OF ADD MOVIES FORM-->
 
 <!--START OF EDIT MOVIES FORM -->
@@ -77,14 +101,14 @@
 
 <!--START OF CARDS-->
 <div class="container">
-    <div class="row">
-        <div class="col-md-3" id="cards">
-        </div>
+    <div class="row" id="cards">
+<!--        <div class="col-md-3" id="cards">-->
+<!--        </div>-->
     </div>
 </div>
 <!--END OF CARDS-->
 
-
+</div>
 <script>
     $(document).ready(function () {
 
@@ -97,13 +121,13 @@
                 $("#cards").html('');
                 let buildHTML = ""
                 movie.forEach(function ({title, id, rating, plot, genre, director, yearReleased}) {
-                    let movieInfoString = (`${title}`)
-                    function counter(movie){
-                        for(i = 0; i < movie.length; i++){
-                        }
-                        return i;
-                    }
-                    console.log(counter);
+                    // let movieInfoString = (`${title}`)
+                    // function counter(movie){
+                    //     for(i = 0; i < movie.length; i++){
+                    //     }
+                    //     return i;
+                    // }
+                    // console.log(counter);
                     buildHTML += `<div class="card-holder">`
                     // buildHTML += `<h3>${title}</h3>`
                     buildHTML += `<div class="card" style="width: 18rem;">
@@ -114,13 +138,15 @@
                         <p></p>
                         <div class="card-body">
 <!--                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                        <div class="row" id="button-container">
                         <button data-id= ${id} class="delete" id="delete-button">Delete</button>
                         </div>
                         </div>
+                        </div>
                         </div>`
-                    console.log(movieInfoString);
-                    console.log(movie[0].plot);
-                    console.log(movie.length);
+                    // console.log(movieInfoString);
+                    // console.log(movie[0].plot);
+                    // console.log(movie.length);
                 })
                 $("#cards").html(buildHTML);
             })
