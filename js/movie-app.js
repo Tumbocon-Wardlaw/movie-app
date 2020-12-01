@@ -21,9 +21,6 @@ let movieArray = [
 // const test = {title: 'Red', body: 'Blue!'};
 
 
-
-
-
 const addMovie = (input) => fetch(`${apiURL}`, {
     method: 'POST',
     headers: {

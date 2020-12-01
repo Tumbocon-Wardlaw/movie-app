@@ -54,3 +54,19 @@ p {
     color: #ffffff;
     font-size: 100px;
 }
+
+/*#cards{*/
+/*    flex-direction: row;*/
+/*    display: inline-block;*/
+/*    justify-content: center;*/
+/*}*/
+.row{
+    flex-direction: row;
+    display: inline-block;
+}
+h3{
+    text-align: center;
+}
+.card-title{
+    text-align: center;
+}
